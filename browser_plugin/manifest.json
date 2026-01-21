@@ -1,0 +1,29 @@
+{
+    "name": "Extension Name Placeholder",
+    "version": "0.1",
+    "manifest_version": 3,
+    "description": "Extension description Placeholder",
+    "permissions": [
+        "storage",  
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icon-bitty.png Placeholder",
+        "48": "icon-small.png Placeholder",
+        "128": "icon-large.png Placeholder"
+    },
+    "content_scripts": [
+        {
+            "matches": ["www.google.com"],
+            "js": ["./scripts/contentScript.js"],
+            "css": ["./styles/content.css"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "Titulo do Plugin Placeholder",
+        "default_popup": "popup.html"
+    }
+}
