@@ -8,22 +8,30 @@
         "activeTab"
     ],
     "icons": {
-        "16": "icon-bitty.png Placeholder",
-        "48": "icon-small.png Placeholder",
-        "128": "icon-large.png Placeholder"
+        "16": "icons/icon-bitty.png Placeholder",
+        "32": "icons/icon_32px_placeholder.png",
+        "48": "icons/icon_48px_placeholder.png",
+        "128": "icons/icon-large.png Placeholder"
     },
     "content_scripts": [
         {
-            "matches": ["www.google.com"],
-            "js": ["./scripts/contentScript.js"],
-            "css": ["./styles/content.css"]
+            "matches": ["<all_urls>"],
+            "js": ["scripts/content_scripts.js"],
+            "css": ["css/content.css"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["icons/icon_32px_placeholder.png"],
+            "matches": ["<all_urls>"]
         }
     ],
     "background": {
-        "service_worker": "background.js"
+        "background.scripts": "background.js"
     },
     "action": {
         "default_title": "Titulo do Plugin Placeholder",
+        "default_icon": "icons/icon_48px_placeholder.png",
         "default_popup": "popup.html"
     }
 }
