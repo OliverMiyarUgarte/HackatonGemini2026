@@ -10,7 +10,7 @@ const genAI = new GoogleGenerativeAI(apiKey || "");
 
 // setup the model/agent
 const model = genAI.getGenerativeModel({ 
-    model: "gemini-1.5-flash",
+    model: "gemini-3-flash-preview",
     systemInstruction: `You are a Search Optimizer. Output valid JSON.`,
     generationConfig: { responseMimeType: "application/json" }
 });
@@ -33,6 +33,6 @@ export default async function handler(request: VercelRequest, response: VercelRe
         return response.status(200).json(jsonOut);
     } catch(error) {
         console.error(error);
-        return response.status(500).json({ error: "Error with server!" });
+        return response.status(500).json({ error: error });
     }
 }
