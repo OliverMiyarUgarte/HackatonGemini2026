@@ -4,6 +4,7 @@
     "manifest_version": 3,
     "description": "Extension description Placeholder",
     "permissions": [
+        "tabs",
         "storage",  
         "activeTab"
     ],
@@ -16,7 +17,10 @@
     "content_scripts": [
         {
             "matches": ["<all_urls>"],
-            "js": ["scripts/content_scripts.js"],
+            "js": [
+                "scripts/refine_query.js",
+                "scripts/content_scripts.js"
+            ],
             "css": ["css/content.css"]
         }
     ],
@@ -27,7 +31,8 @@
         }
     ],
     "background": {
-        "background.scripts": "background.js"
+        "scripts": ["scripts/background.js"],
+        "type": "module"
     },
     "action": {
         "default_title": "Titulo do Plugin Placeholder",

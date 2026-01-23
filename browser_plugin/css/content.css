@@ -3,6 +3,7 @@
     width: 32px;
     height: 32px;
     cursor: pointer !important; /* Muda a seta para a 'mãozinha' */
+    align-self: center;
 }
 
 /* Efeito ao passar o mouse (Hover) */
