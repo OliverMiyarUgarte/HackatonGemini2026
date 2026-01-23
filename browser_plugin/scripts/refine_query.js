@@ -3,7 +3,7 @@
 async function refine_query(user_search) {
     //  enviar para o backend
     console.log('refining search')
-    return user_search
+    
     const refined_search = await call_back_end(user_search)
     
     return refined_search ?? user_search
@@ -11,30 +11,30 @@ async function refine_query(user_search) {
 
 //  manda um request para o backend otimizar a pesquisa do usuário e 
 //  retorna a pesquisa otimizada
-// async function call_back_end(user_search) {
-//     const server_endpoint = "http://localhost:3000/api/optimize"
+async function call_back_end(user_search) {
+    const server_endpoint = "http://localhost:3000/api/optimize"
     
-//     try {
-//         const response = 
-//             await fetch(server_endpoint, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify({
-//                 query: user_search
-//             })
-//         })
+    try {
+        const response = 
+            await fetch(server_endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: user_search
+            })
+        })
 
-//         if (!response) {
-//             console.log('cannot connect to server')
-//             return undefined
-//         }
-//         else {
-//             return response
-//         }
-//     }
-//     catch {
-//         return undefined
-//     }
-// }
+        if (!response) {
+            console.log('cannot connect to server')
+            return undefined
+        }
+        else {
+            return response
+        }
+    }
+    catch {
+        return undefined
+    }
+}
