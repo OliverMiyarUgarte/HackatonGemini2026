@@ -1,0 +1,42 @@
+{
+    "name": "Optimizing Search Agente",
+    "version": "0.1",
+    "manifest_version": 3,
+    "description": "Extension description Placeholder",
+    "permissions": [
+        "tabs",
+        "storage",  
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icons/icon-16.png",
+        "32": "icons/icon-32.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "scripts/refine_query.js",
+                "scripts/content_scripts.js"
+            ],
+            "css": ["css/content.css"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["icons/icon-32.svg"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "background": {
+        "service_worker": "scripts/background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_title": "Titulo do Plugin Placeholder",
+        "default_icon": "icons/icon-48.png",
+        "default_popup": "popup.html"
+    }
+}
