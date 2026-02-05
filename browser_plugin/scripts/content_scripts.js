@@ -11,7 +11,7 @@ function criar_botao() {
         btn.type = 'button'
         btn.title = 'Refine your search'
         
-        const imgUrl = chrome.runtime.getURL("icons/icon_32px_placeholder.png")
+        const imgUrl = chrome.runtime.getURL("icons/icon-32.svg")
     
         btn.style.backgroundImage = `url('${imgUrl}')`;
 

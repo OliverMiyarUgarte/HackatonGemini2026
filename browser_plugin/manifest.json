@@ -1,5 +1,5 @@
 {
-    "name": "Extension Name Placeholder",
+    "name": "Optimizing Search Agente",
     "version": "0.1",
     "manifest_version": 3,
     "description": "Extension description Placeholder",
@@ -9,10 +9,10 @@
         "activeTab"
     ],
     "icons": {
-        "16": "icons/icon-bitty.png Placeholder",
-        "32": "icons/icon_32px_placeholder.png",
-        "48": "icons/icon_48px_placeholder.png",
-        "128": "icons/icon-large.png Placeholder"
+        "16": "icons/icon-16.svg",
+        "32": "icons/icon-32.svg",
+        "48": "icons/icon-48.svg",
+        "128": "icons/icon-128.svg"
     },
     "content_scripts": [
         {
@@ -26,7 +26,7 @@
     ],
     "web_accessible_resources": [
         {
-            "resources": ["icons/icon_32px_placeholder.png"],
+            "resources": ["icons/icon-32.svg"],
             "matches": ["<all_urls>"]
         }
     ],
@@ -36,7 +36,7 @@
     },
     "action": {
         "default_title": "Titulo do Plugin Placeholder",
-        "default_icon": "icons/icon_48px_placeholder.png",
+        "default_icon": "icons/icon-48.svg",
         "default_popup": "popup.html"
     }
 }
