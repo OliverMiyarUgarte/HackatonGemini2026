@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-
+    
 dotenv.config();
 const apiKey = process.env.GEMINI_API_KEY;
 

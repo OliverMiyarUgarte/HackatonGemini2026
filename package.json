@@ -1,1 +1,1 @@
-{"private": true, "workspaces": ["backend", "extension"]}
+{"private":true,"workspaces":["backend","extension"],"dependencies":{"@google/generative-ai":"^0.24.1"}}

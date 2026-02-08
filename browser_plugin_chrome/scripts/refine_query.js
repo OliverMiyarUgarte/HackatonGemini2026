@@ -12,7 +12,8 @@ async function refine_query(user_search) {
 //  manda um request para o backend otimizar a pesquisa do usuário e 
 //  retorna a pesquisa otimizada
 async function call_back_end(user_search) {
-    const server_endpoint = "http://localhost:3000/api/optimize"
+    //const server_endpoint = "http://localhost:3000/api/optimize"
+    const server_endpoint = "https://backend-hackathon-phi.vercel.app/api/optimize"
     
     try {
         const response = 
@@ -26,12 +27,13 @@ async function call_back_end(user_search) {
             })
         })
 
-        if (!response) {
+        if (!response.ok) {
             console.log('cannot connect to server')
             return undefined
         }
         else {
-            return response
+            const data = await response.json()
+            return data.result
         }
     }
     catch {
